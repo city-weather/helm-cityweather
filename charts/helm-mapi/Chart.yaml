@@ -1,0 +1,5 @@
+apiVersion: v2
+name: mapi-helm-chart
+description: A Helm chart for mapi
+version: 0.1.6
+appVersion: "2.1"

@@ -1,0 +1,12 @@
+promtail:
+  enabled: true
+  lokiAddress: loki.default.svc.cluster.local
+  lokiPort: 3100
+  scrapeConfigs:
+    - job_name: docker-logs
+      static_configs:
+        - targets:
+            - localhost
+          labels:
+            job: varlogs
+            __path__: /var/log/*log

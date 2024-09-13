@@ -1,0 +1,7 @@
+# values.yaml
+replicaCount: 1
+image:
+  repository: thecyberbaby/mapi
+  tag: 21
+env: Development
+namespace: mapi

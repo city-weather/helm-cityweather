@@ -1,0 +1,7 @@
+# values.yaml
+replicaCount: 1
+image:
+  repository: thecyberbaby/webapp
+  tag: 1
+env: Development
+namespace: webapp

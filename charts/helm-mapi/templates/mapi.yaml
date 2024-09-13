@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mapi-deployment
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: mapi-app
+  template:
+    metadata:
+      labels:
+        app: mapi-app
+        environment: {{ .Values.env }}
+    spec:
+      containers:
+        - name: mapi-container
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: 5000 

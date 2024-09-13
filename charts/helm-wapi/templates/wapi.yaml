@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wapi-deployment
+  namespace: {{ .Values.namespace }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: wapi-app 
+  template:
+    metadata:
+      labels:
+        app: wapi-app
+        environment: {{ .Values.env }}
+    spec:
+      containers:
+        - name: wapi-container
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: 5000 

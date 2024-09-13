@@ -1,0 +1,7 @@
+# values.yaml
+replicaCount: 1
+image:
+  repository: thecyberbaby/wapi
+  tag: 3
+env: Development
+namespace: wapi
